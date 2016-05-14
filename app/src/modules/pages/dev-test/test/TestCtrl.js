@@ -3,7 +3,7 @@
 angular.module('myApp').controller('TestCtrl', ['$scope', '$timeout', 'appHttp', 'UserModel', '$location', function($scope, $timeout, appHttp, UserModel, $location) {
 	
 	$scope.user =UserModel.load();
-	$scope.var="This is var variable";
+	$scope.var="Changing TestCtrl";
 	
 	$scope.swipeIt =function(evt, direction, params) {
 		console.log('swipe: '+direction);
