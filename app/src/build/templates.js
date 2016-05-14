@@ -156,7 +156,7 @@ angular.module('myApp').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('/src/modules/pages/dev-test/test/test.html',
     "<div class='test' ng-controller='TestCtrl'>\n" +
-    "\tTest reload \n" +
+    "\tHello World  \n" +
     "\t<br /><br />\n" +
     "\t\n" +
     "\t<!--<div hm-tap='tapIt($event, {})' hm-swipeleft='swipeIt($event, \"left\", {})' hm-swiperight='swipeIt($event, \"right\", {})' hm-options='{swipe_velocity: 0.1}' style='min-height:100px;'>-->\n" +
