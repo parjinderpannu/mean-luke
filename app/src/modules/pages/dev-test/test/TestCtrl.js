@@ -18,7 +18,22 @@ angular.module('myApp').controller('TestCtrl', ['$scope', '$timeout', 'appHttp',
 		return var1;
 	}
 
-	console.log("Calling syncFunc after this functions");
-	var testVar = sync(5);
-	console.log("Called syncFunc and testVar="+testVar);
+	// console.log("Calling syncFunc after this functions");
+	// var testVar = sync(5);
+	// console.log("Called syncFunc and testVar="+testVar);
+
+	function asyncFunc(var1, callback){
+		$timeout(function() {
+			console.log("async Finished");
+			callback();
+		}, 1000);
+		console.log("async Started");
+	}
+
+	asyncFunc(5, function(){
+		console.log("Inside callback");
+	})
+
+	console.log("Line after asyncFunc");
+
 }]);
