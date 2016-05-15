@@ -37,21 +37,30 @@ angular.module('myApp').controller('TestCtrl', ['$scope', '$timeout', 'appHttp',
 
 	// console.log("Line after asyncFunc");
 
-	function asyncFuncPromise(var1){
-		var deferred = $q.defer();
-		$timeout(function() {
-			console.log("async promise finished");
-			deferred.resolve();
-		}, 1000);
-		console.log("async promise started");
-		return deferred.promise;
-	}
+	// function asyncFuncPromise(var1){
+	// 	var deferred = $q.defer();
+	// 	$timeout(function() {
+	// 		console.log("async promise finished");
+	// 		deferred.resolve();
+	// 	}, 1000);
+	// 	console.log("async promise started");
+	// 	return deferred.promise;
+	// }
 
-	asyncFuncPromise(5)
-	.then(function() {
-		console.log("Promise done");
+	// asyncFuncPromise(5)
+	// .then(function() {
+	// 	console.log("Promise done");
+	// });
+
+	// console.log("Line after promise");
+
+	$scope.$on('myEvt', function(evt, params) {
+		console.log("on myEvt");
 	});
 
-	console.log("Line after promise");
+	$scope.$broadcast('myEvt', {});
+	$timeout(function(){
+		$scope.$broadcast('myEvt', {});
+	}, 1000);
 
 }]);
